@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %} Table {% endblock %}
+
+{% block body %}
+<h1>This is our farm record table page</h1>
+
+<p><em> This is the records table </em></p>
+
+<h3>This is the {{name}}</h3>
+
+<div class="table-responsive">
+    <table class="table align-middle table-striped">
+        <tr>
+            <th>Farm_items</th>
+            <th>Quantity</th>
+            <th>Units</th>
+            <th>Period</th>
+            <th>Cost</th>
+            <th>Total cost</th>
+        </tr>
+        {% for data in farm_data %}
+        <tr>
+            <td>{{data.farm_items}}</td>
+            <td>{{data.quantity}}</td>
+            <td>{{data.units}}</td>
+            <td>{{data.period}}</td>
+            <td>{{data.cost}}</td>
+<!--
+            <td>{% widthratio data.quantity 1 data.cost %}</td>
+        </tr>
+
+        {% endfor %}
+        <tr>
+            <td>{{tquantity}}</td>
+            <td>{{tquantity}}</td>
+            <td>nil</td>
+            <td>nil</td>
+            <td>sum</td>
+            <td>sum</td>
+        </tr>
+    </table>
+
+</div>
+
+{% endblock %}
+
+
+
